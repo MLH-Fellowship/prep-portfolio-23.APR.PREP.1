@@ -1,36 +1,109 @@
 .nav-bar {
   width: 100%;
-  background-color: #133667;
-  font-family: 'Poppins', serif;
+  font-family: "Poppins", serif;
   font-weight: 700 !important;
-  padding-top: 10px;
-}
+  top: 0px;
+  position: sticky;
+  z-index: 100;
+  background-color: #133667;
 
-.nav-content .logo-touch-target {
-  display: inline-flex;
-  height: 60%;
-  width: 350px;
-}
-
-.nav-content .nav-logo {
-  height: 60px;
-  margin: auto;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &.scrolled {
+    height: 70px;
+    background-color: #0e2c57;
+    transition: height 0.3s ease;
+  }
 }
 
 .nav-logo img {
   width: 200px;
+  transition: width 0.3s ease;
+
+  .nav-bar.scrolled & {
+    width: 150px;
+  }
 }
 
-.nav-content nav {
+.nav-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
   text-align: right;
-  padding: 5px;
+  padding: 10px;
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+
+  a {
+    margin-left: 20px;
+  }
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+
+  a {
+    color: #fff;
+    margin-inline: 25px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+  }
+  .menu-icon i {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .menu-icon.menu-active i:before {
+    content: "\f00d";
+  }
+
+  .show-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #133667;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .show-menu a {
+    margin: 1rem 1rem;
+    font-size: 1.2rem;
+    line-height: 10px;
+  }
 }

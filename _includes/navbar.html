@@ -1,16 +1,43 @@
 <header class="nav-bar">
   <div class="nav-content">
-    <nav>
+    <!-- For the logo -->
+    <div class="left">
       <a href="{{ '/' | relative_url }}">
         <div class="nav-logo">
           <img src="./assets/img/mlh-prep.png" />
         </div>
       </a>
+    </div>
 
-      <div>
-        <a href="#meet-the-pod">Meet the Pod</a>
-        <a href="#projects">Projects</a>
-      </div>
-    </nav>
+    <!-- For the menu icon when the screen is small -->
+    <div class="menu-icon">
+      <i class="fa fa-bars"></i>
+    </div>
+
+    <!-- For the menu items -->
+    <div class="right">
+      <a href="#">Home</a>
+      <a href="#meet-the-pod">Pod</a>
+      <a href="#projects">Projects</a>
+    </div>
   </div>
 </header>
+
+<script>
+  const navbar = document.querySelector('.nav-bar');
+  const menuIcon = document.querySelector(".menu-icon");
+  const menu = document.querySelector(".right");
+
+  // For navbar to adjust when scrolled
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // For menu icon to toggle when clicked
+  menuIcon.addEventListener("click", () => {
+    menu.classList.toggle("show-nav");
+    menuIcon.classList.toggle('menu-active');
+  });
+
+</script>
