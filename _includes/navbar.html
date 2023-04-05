@@ -16,7 +16,6 @@
 
     <!-- For the menu items -->
     <div class="right">
-      <a href="#">Home</a>
       <a href="#meet-the-pod">Pod</a>
       <a href="#projects">Projects</a>
     </div>
@@ -25,8 +24,8 @@
 
 <script>
   const navbar = document.querySelector('.nav-bar');
-  const menuIcon = document.querySelector(".menu-icon");
-  const menu = document.querySelector(".right");
+  const menuIcon = document.querySelector('.menu-icon');
+  const menu = document.querySelector('.right');
 
   // For navbar to adjust when scrolled
   window.addEventListener('scroll', () => {
@@ -35,9 +34,8 @@
   });
 
   // For menu icon to toggle when clicked
-  menuIcon.addEventListener("click", () => {
-    menu.classList.toggle("show-nav");
+  menuIcon.addEventListener('click', () => {
+    menu.classList.toggle('show-nav');
     menuIcon.classList.toggle('menu-active');
   });
-
 </script>
