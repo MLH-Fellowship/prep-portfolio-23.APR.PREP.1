@@ -1,3 +1,27 @@
 <div id="map">
 
 </div>
+
+<script>
+    const mymap = L.map('map').setView([51.505, -0.09], 1);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(mymap);
+
+    // most important: convert strings such as "New York City" to longitudes and latitudes so they can be interpreted as locations
+    
+    <!--
+        var provider = new window.GeoSearch.GoogleProvider({
+    params: {
+        key: 'YOUR_API_KEY'
+    }
+    });
+    -->
+
+    //alternatively we can try nomatin
+
+    // want to import the custom jpg files of the profile pictures of the fellows and use them as the icons
+    // want to have the markers interactable so that you can click on them and create a popup of their information
+    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+</script>
