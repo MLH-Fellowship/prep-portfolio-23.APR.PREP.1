@@ -1,4 +1,12 @@
 ---
+layout: page
+permalink: /stats
 ---
 
-<h1>Stats</h1>
+<h1>Pod stats</h1>
+<ol>
+  {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
+  {% for fellow in fellows_by_commit  %}
+  <li>{{ fellow.name }}: {{ fellow.commits }}</li>
+  {% endfor %}
+</ol>
