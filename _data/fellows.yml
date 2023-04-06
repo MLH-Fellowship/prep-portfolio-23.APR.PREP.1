@@ -1,15 +1,59 @@
-- name: Will
+- name: Aksh
   img: logo.jpg
-  location: London, UK
+  location: Delhi, India
 
-- name: Amanda
+- name: Jay
   img: amanda.jpg
-  location: New York City, USA
+  location: Mumbai, India
 
-- name: Aaron
+- name: Lakshya
   img: aaron.jpg
-  location: London, UK
+  location: Delhi, India
 
-- name: Swift
+- name: Ankur
   img: swift.jpg
-  location: New York City, USA
+  location: Aligarh, India
+
+- name: Mamtha
+  img: swift.jpg
+  location: Hyderabad, India
+
+- name: Abirami
+  img: swift.jpg
+  location: Toronto, Canada
+
+- name: Kristin
+  img: swift.jpg
+  location: New York, USA
+
+- name: Daniel
+  img: swift.jpg
+  location: New York, USA
+
+- name: Jessie
+  img: swift.jpg
+  location: New York, USA
+
+- name: Priyanka
+  img: swift.jpg
+  location: New Jersey, USA
+
+- name: Tomás
+  img: swift.jpg
+  location: Some-place, Spain
+
+- name: Ikeh
+  img: swift.jpg
+  location: Some-place, Nigeria
+
+- name: Akansha
+  img: swift.jpg
+  location: some-place, India
+
+- name: Archi
+  img: swift.jpg
+  location: Bhopal, India
+
+- name: ZhiYuan
+  img: swift.jpg
+  location: Some-place, some-country
