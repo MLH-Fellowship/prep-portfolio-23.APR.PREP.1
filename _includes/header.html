@@ -7,7 +7,7 @@
         content="My Personal Portfolio">
     <meta property="og:image" content="./assets/img/social-link.jpg">
     <meta property="og:url" content="{{ page.url }}">
-
+      
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -35,7 +35,22 @@
         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
         crossorigin=""></script>
 
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet" crossorigin=""></script>
+
+    <!-- Esri Leaflet Geocoder -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css"
+        crossorigin=""
+    />
+    <script src="https://unpkg.com/esri-leaflet-geocoder" crossorigin=""></script>
+
+    <!-- Load Esri Leaflet Vector from CDN -->
+    <script src="https://unpkg.com/esri-leaflet-vector@4.0.1/dist/esri-leaflet-vector.js" crossorigin=""></script>
+
     <link lang='sass' rel="stylesheet" href="/assets/css/main.css">
     <link rel='icon' href='/assets/img/favicon.ico' type='image/x-icon' />
     <title>{{ site.title }}</title>
+      
 </head>

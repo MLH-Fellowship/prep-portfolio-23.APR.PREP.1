@@ -13,3 +13,36 @@
 - name: Swift
   img: swift.jpg
   location: New York City, USA
+
+- name: A
+  location: Hyderabad india
+
+- name: B
+  location: Aligarh, India
+
+- name: C
+  location: India
+
+- name: D
+  location: Toronto, Ontario, Canada
+
+- name: E
+  location: New York, United States
+
+- name: F
+  location: Mumbai, India
+
+- name: G
+  location: New York City
+
+- name: H
+  location: Bhopal madhya pradesh India
+
+- name: I
+  location: Delhi, India
+
+- name: J
+  location: New York, NY
+
+- name: K
+  location: New Jersey, USA

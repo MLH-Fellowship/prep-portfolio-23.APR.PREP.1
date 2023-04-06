@@ -2,25 +2,54 @@
 
 </div>
 
+
 <script>
-    const mymap = L.map('map').setView([51.505, -0.09], 1);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    var fellows_information = {{ site.data.fellows_information | jsonify }};
+    console.log(fellows_information); // output to console for testing purposes
+
+    const mymap = L.map('map').setView([51.505, -0.09], 2);
+
+    //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //    maxZoom: 19,
+    //    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    //}).addTo(mymap);
+
+    var tiles = L.esri.basemapLayer("Streets").addTo(mymap);
+
+    //var tiles = L.esri.Vector.vectorBasemapLayer("ArcGIS:Streets", {
+    //    apikey: 'YOUR API KEY HERE'
+    //  }).addTo(mymap);
+
+
+    // create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch({
+    providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+        // API Key to be passed to the ArcGIS Online Geocoding Service
+        apikey: 'YOUR API KEY'
+        })
+    ]
     }).addTo(mymap);
 
-    // most important: convert strings such as "New York City" to longitudes and latitudes so they can be interpreted as locations
-    
-    <!--
-        var provider = new window.GeoSearch.GoogleProvider({
-    params: {
-        key: 'YOUR_API_KEY'
-    }
-    });
-    -->
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(mymap);
 
-    //alternatively we can try nomatin
-    // want to import the custom jpg files of the profile pictures of the fellows and use them as the icons
-    // want to have the markers interactable so that you can click on them and create a popup of their information
-    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+    // for each location in the locationList add that location to the map as a marker
+    for (var i = 0; i < fellows_information.length; i++) {
+        // converts the location string into a dictionary of lists of dictionaries that contains the latlng 
+        L.esri.Geocoding.geocode({apikey: 'YOUR_API_KEY'}).text(fellows_information[i]['location']).run(function (err, response) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+                console.log(response['results'][0]['latlng']);
+
+                // TODO: Add the popup for each marker containing the fellows information in cards such as their name, location, and description.
+                // Wait for Issue #9 to close
+                // indexs into response to get the lat and long
+                results.addLayer(L.marker(response['results'][0]['latlng']))
+                
+        });
+    }
+    
 </script>
