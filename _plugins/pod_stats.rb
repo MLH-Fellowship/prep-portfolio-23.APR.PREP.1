@@ -21,7 +21,6 @@ module PodStats
 
       repos.each do |repo|
         # TODO: get other stats
-        # TODO: proper error handling in API call and parsing?
         uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
         resp = Net::HTTP.get(uri)
         contributors = JSON.parse(resp)
@@ -37,7 +36,6 @@ module PodStats
       end
 
       # get leaderboard template and add fellows data
-      # TODO: the stats template
       stats_page = site.pages.find { |page| page.name == 'stats.html' }
       stats_page.data['fellows'] = fellows
       stats_page.data['repos'] = repos
