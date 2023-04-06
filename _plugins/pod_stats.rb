@@ -12,30 +12,31 @@ module PodStats
     def generate(site)
       # list of MLH repos the pod is working on
       repos = [{ 'name' => 'prep-portfolio-23.APR.PREP.1',
-                 'owner' => 'MLH-Fellowship'}]
+                 'owner' => 'MLH-Fellowship' }]
       fellows = site.data['fellows']
+      # TODO: update 'name' with the actual key (e.g. 'github')
+      # as soon as issue 13 gets solved
+      usernames = fellows.map { |f| f['name'] }
 
-      merged = [] # array of merged pull requests
       repos.each do |repo|
         # TODO: get other stats
         # TODO: proper error handling in API call and parsing?
-        uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/pulls")
+        uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
         resp = Net::HTTP.get(uri)
-        pulls = JSON.load(resp)
-        # the way of seeing if a pull request was merged is by checking
-        # whether merged_at is nil
-        merged.concat(pulls.filter { |p| !p['merged_at'].nil? })
-      end
+        contributors = JSON.parse(resp)
 
-      # array of merged pulls authors
-      authors = merged.map { |m| m['user']['login'] }
+        contributors.each do |contr|
+          username = contr['author']['login']
+          next unless usernames.include?(username)
 
-      fellows.each do |fellow|
-        # TODO: update fellow['name'] with the actual key (e.g. fellow['github'])
-        # as soon as issue 13 gets solved
-        # The fellow 'name' is not their username, but the usernames
-        # haven't been yet added to _data/fellows.yml
-        fellow['merged_pulls'] = authors.count(fellow['name'])
+          commits = contr['total']
+          fellow = fellows.select { |f| f['name'] == username }
+          if fellow['commits'].nil?
+            fellow['commits'] = commits
+          else
+            fellow['commits'] += commits
+          end
+        end
       end
 
       # get leaderboard template and add fellows data
