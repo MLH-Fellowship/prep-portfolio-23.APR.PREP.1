@@ -1,0 +1,42 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a:link,
+  a:visited {
+    color: #0e2c57;
+  }
+
+  h1 {
+    margin: 2.5rem 0 2rem;
+  }
+  .credit {
+    color: grey;
+    display: flex;
+    font-size: 14px;
+
+    p:first-child {
+      margin-right: 15px;
+    }
+  }
+
+  h2 {
+    font-family: 'Poppins';
+  }
+}
+
+.posts-container {
+  max-width: 800px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .post {
+    &:not(:last-child) {
+      border-bottom: 1px solid #333;
+      margin-bottom: 1rem;
+    }
+  }
+}
