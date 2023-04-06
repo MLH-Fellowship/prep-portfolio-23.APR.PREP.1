@@ -14,9 +14,11 @@ module PodStats
       repos = [{ 'name' => 'prep-portfolio-23.APR.PREP.1',
                  'owner' => 'MLH-Fellowship' }]
       fellows = site.data['fellows']
+
       # TODO: update 'name' with the actual key (e.g. 'github')
       # as soon as issue 13 gets solved
       usernames = fellows.map { |f| f['name'] }
+      fellows = fellows.each { |f| f['commits'] = 0 }
 
       repos.each do |repo|
         # TODO: get other stats
@@ -24,6 +26,7 @@ module PodStats
         uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
         resp = Net::HTTP.get(uri)
         contributors = JSON.parse(resp)
+        next if contributors.empty?
 
         contributors.each do |contr|
           username = contr['author']['login']
@@ -31,18 +34,15 @@ module PodStats
 
           commits = contr['total']
           fellow = fellows.select { |f| f['name'] == username }
-          if fellow['commits'].nil?
-            fellow['commits'] = commits
-          else
-            fellow['commits'] += commits
-          end
+          fellow['commits'] += commits
         end
       end
 
       # get leaderboard template and add fellows data
       # TODO: the stats template
       stats_page = site.pages.find { |page| page.name == 'stats.html' }
-      stats_page.data['fellows'] = fellows
+      fellows = fellows.sort_by { |f| -f['commits'] }
+      stats_page.data['fellows'] = fellows.sort_by { |f| -f['commits'] }
     end
   end
 end
