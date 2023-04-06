@@ -4,15 +4,21 @@ permalink: /stats
 ---
 
 <h1>Pod stats</h1>
+
 <table>
   <tr>
     <th>Name</th>
     <th>Commits to Pod projects</th>
+  </tr>
     {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
+    {% assign total = 0 %}
     {% for fellow in fellows_by_commit  %}
+        {% assign total = total | plus: fellow.commits %}
   <tr>
     <td>{{ fellow.name }}</td>
     <td>{{ fellow.commits }}</td>
     {% endfor %}
   </tr>
 </table>
+
+<p>Total commits: {{ total }} </p>
