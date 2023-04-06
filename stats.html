@@ -3,11 +3,18 @@ layout: page
 title: Pod Statistics
 ---
 
+<h2>Pod repositories</h2>
+{% for repo in page.repos %}
+<a href="https://github.com/{{ repo.owner }}/{{ repo.name }}">
+  {{ repo.owner }}/{{ repo.name}}
+</a>
+{% endfor %}
 
+<h2>Leaderboard</h2>
 <table>
   <tr>
     <th>Name</th>
-    <th>Commits to Pod projects</th>
+    <th>Commits</th>
   </tr>
     {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
     {% assign total = 0 %}
