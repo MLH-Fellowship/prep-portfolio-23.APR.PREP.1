@@ -15,9 +15,11 @@ title: Pod Statistics
         {% assign total = total | plus: fellow.commits %}
   <tr>
     <td>{{ fellow.name }}</td>
-    <td>{{ fellow.commits }}</td>
+    <td style="text-align: center">{{ fellow.commits }}</td>
     {% endfor %}
   </tr>
+  <tr>
+    <td>Total commits</td>
+    <td style="text-align: center">{{ total }}</td>
+  </tr>
 </table>
-
-<p>Total commits: {{ total }} </p>
