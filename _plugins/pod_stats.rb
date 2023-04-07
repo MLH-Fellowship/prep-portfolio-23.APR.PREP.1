@@ -42,7 +42,6 @@ module PodStats
       # get leaderboard template and add fellows data
       stats_page = site.pages.find { |page| page.name == 'stats.html' }
       stats_page.data['fellows'] = fellows
-      stats_page.data['repos'] = repos
     end
   end
 end

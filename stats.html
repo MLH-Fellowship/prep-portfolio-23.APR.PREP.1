@@ -5,9 +5,9 @@ title: Pod Statistics
 
 <div class="stats">
   <h2>Pod repositories</h2>
-  {% for repo in page.repos %}
-  <a href="https://github.com/{{ repo.owner }}/{{ repo.name }}">
-    {{ repo.owner }}/{{ repo.name}}
+  {% for project in site.data.projects %}
+  <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
+    {{ project.repo.owner }}/{{ project.repo.name}}
   </a>
   {% endfor %}
 
