@@ -1,48 +1,63 @@
 - name: Will
   img: logo.jpg
   location: London, UK
+  description: krltl
 
 - name: Amanda
   img: amanda.jpg
   location: New York City, USA
+  description: krltl
 
 - name: Aaron
   img: aaron.jpg
   location: London, UK
+  description: krltl
 
 - name: Swift
   img: swift.jpg
   location: New York City, USA
+  description: krltl
 
 - name: A
   location: Hyderabad india
+  description: krltl
 
 - name: B
   location: Aligarh, India
+  description: krltl
 
 - name: C
   location: India
+  description: krltl
 
 - name: D
   location: Toronto, Ontario, Canada
+  description: krltl
 
 - name: E
   location: New York, United States
+  description: krltl
 
 - name: F
   location: Mumbai, India
+  description: krltl
 
 - name: G
   location: New York City
+  description: krltl
 
 - name: H
   location: Bhopal madhya pradesh India
+  description: krltl
 
 - name: I
   location: Delhi, India
+  description: krltl
 
 - name: J
   location: New York, NY
+  description: krltl
 
 - name: K
   location: New Jersey, USA
+  description: krltl

@@ -3,8 +3,14 @@
 </div>
 
 
+
+
+
 <script>
     var fellows_information = {{ site.data.fellows_information | jsonify }};
+    //var fellows_information = {% assign json_fellows_info = site.data.fellows_information | jsonify %}{{ json_fellows_info }};
+
+   
     console.log(fellows_information); // output to console for testing purposes
 
     const mymap = L.map('map').setView([51.505, -0.09], 2);
@@ -26,7 +32,7 @@
     providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
         // API Key to be passed to the ArcGIS Online Geocoding Service
-        apikey: 'YOUR API KEY'
+        apikey: 'AAPKf280bd2ee4054c18b59eaa00be4726efg6MGfnRo4kPKYL4dbrEuqNQzWaVcdEi4XeeD8vHHPYTRPhrNfivU9XKZ-hlZhequ'
         })
     ]
     }).addTo(mymap);
@@ -37,19 +43,33 @@
     // for each location in the locationList add that location to the map as a marker
     for (var i = 0; i < fellows_information.length; i++) {
         // converts the location string into a dictionary of lists of dictionaries that contains the latlng 
-        L.esri.Geocoding.geocode({apikey: 'YOUR_API_KEY'}).text(fellows_information[i]['location']).run(function (err, response) {
+        L.esri.Geocoding.geocode({apikey: 'AAPKf280bd2ee4054c18b59eaa00be4726efg6MGfnRo4kPKYL4dbrEuqNQzWaVcdEi4XeeD8vHHPYTRPhrNfivU9XKZ-hlZhequ'}).text(fellows_information[i]['location']).run(function (err, response) {
             if (err) {
                 console.log(err);
                 return;
             }
                 console.log(response['results'][0]['latlng']);
 
+                marker = L.marker(response['results'][0]['latlng']);
+
                 // TODO: Add the popup for each marker containing the fellows information in cards such as their name, location, and description.
+                marker.bindPopup(`<h3>${fellows_information[i]['name']}</h3>
+                                <p>${fellows_information[i]['location']}</p>
+                                <p>${fellows_information[i]['description']}</p>`);
+
+              
                 // Wait for Issue #9 to close
                 // indexs into response to get the lat and long
-                results.addLayer(L.marker(response['results'][0]['latlng']))
+                //results.addLayer(L.marker(response['results'][0]['latlng']))
+
+                results.addLayer(marker)
                 
         });
     }
     
 </script>
+
+
+
+
+
