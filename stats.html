@@ -2,47 +2,61 @@
 layout: page
 title: Pod Statistics
 ---
-
-<h2>Pod projects</h2>
-<div class="table-responsive">
-  <table class="table table-hover">
-    <tr class="thead-light">
-      <th>Project name</th>
-      <th>Commits (pod members)</th>
-    </tr>
-    {% assign total = 0 %}
-    {% for project in page.projects %}
-    {% assign total = total | plus: project.repo.commits %}
-    <tr>
-      <td>
-	<a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
-	  {{ project.title }}
-	</a>
-      </td>
-      <td>{{ project.repo.commits }}</td>
-    </tr>
-    {% endfor %}
-    <tr>
-      <td>Total commits</td>
-      <td>{{ total }}</td>
-    </tr>
-  </table>
+<div class="row justify-content-between">
+  <div class="col">
+    <h2>Pod projects</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+	<thead class="thead-light">
+	  <tr>
+	    <th>Project name</th>
+	    <th>Commits</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% assign total = 0 %}
+	  {% for project in page.projects %}
+	  {% assign total = total | plus: project.repo.commits %}
+	  <tr>
+	    <td>
+	      <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
+		{{ project.title }}
+	      </a>
+	    </td>
+	    <td>{{ project.repo.commits }}</td>
+	  </tr>
+	  {% endfor %}
+	  <tr>
+	    <td><strong>Total commits</strong></td>
+	    <td><strong>{{ total }}</strong></td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="col">
+    <h2>Leaderboard</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+	<thead class="thead-light">
+	  <tr>
+	    <th>#</th>
+	    <th>Name</th>
+	    <th>Commits</th>
+	  </tr>
+	</thead>
+	{% assign number = 1 %}
+	{% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
+	{% for fellow in fellows_by_commit  %}
+	<tr>
+	  <th scope="row">{{ number }}</th>
+	  <td>{{ fellow.name }}</td>
+	  <td>{{ fellow.commits }}</td>
+	     {% assign number = number | plus: 1 %}
+	  {% endfor %}
+	</tr>
+      </table>
+    </div>
+  </div>
 </div>
-
-<h2>Leaderboard</h2>
-<div class="table-responsive">
-  <table class="table table-sm table-hover">
-    <tr class="thead-light">
-      <th>Name</th>
-      <th>Commits</th>
-    </tr>
-    {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
-    {% for fellow in fellows_by_commit  %}
-    <tr>
-      <td>{{ fellow.name }}</td>
-      <td>{{ fellow.commits }}</td>
-      {% endfor %}
-    </tr>
-  </table>
-</div>
-
