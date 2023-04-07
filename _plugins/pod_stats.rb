@@ -16,7 +16,7 @@ module PodStats
       # TODO: update 'name' with the actual key (e.g. 'github')
       # as soon as issue 13 gets solved
       usernames = fellows.map { |f| f['name'] }
-      fellows.each { |f| f['merges'] = f['commits'] = 0 }
+      fellows.each { |f| f['merged'] = f['commits'] = 0 }
 
       projects.map { |p| p['repo'] }.each do |repo|
         # get merged pull requests
