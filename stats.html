@@ -3,30 +3,32 @@ layout: page
 title: Pod Statistics
 ---
 
-<h2>Pod repositories</h2>
-{% for repo in page.repos %}
-<a href="https://github.com/{{ repo.owner }}/{{ repo.name }}">
-  {{ repo.owner }}/{{ repo.name}}
-</a>
-{% endfor %}
+<div class="stats">
+  <h2>Pod repositories</h2>
+  {% for repo in page.repos %}
+  <a href="https://github.com/{{ repo.owner }}/{{ repo.name }}">
+    {{ repo.owner }}/{{ repo.name}}
+  </a>
+  {% endfor %}
 
-<h2>Leaderboard</h2>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Commits</th>
-  </tr>
+  <h2>Leaderboard</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Commits</th>
+    </tr>
     {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
     {% assign total = 0 %}
     {% for fellow in fellows_by_commit  %}
-        {% assign total = total | plus: fellow.commits %}
-  <tr>
-    <td>{{ fellow.name }}</td>
-    <td style="text-align: center">{{ fellow.commits }}</td>
-    {% endfor %}
-  </tr>
-  <tr>
-    <td>Total commits</td>
-    <td style="text-align: center">{{ total }}</td>
-  </tr>
-</table>
+    {% assign total = total | plus: fellow.commits %}
+    <tr>
+      <td>{{ fellow.name }}</td>
+      <td class="commits">{{ fellow.commits }}</td>
+      {% endfor %}
+    </tr>
+    <tr>
+      <td>Total commits</td>
+      <td class="commits">{{ total }}</td>
+    </tr>
+  </table>
+</div>
