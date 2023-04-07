@@ -46,16 +46,18 @@ title: Pod Statistics
 	    <th>Commits</th>
 	  </tr>
 	</thead>
-	{% assign number = 1 %}
-	{% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
-	{% for fellow in fellows_by_commit  %}
-	<tr>
-	  <th scope="row">{{ number }}</th>
-	  <td>{{ fellow.name }}</td>
-	  <td>{{ fellow.commits }}</td>
-	     {% assign number = number | plus: 1 %}
-	  {% endfor %}
-	</tr>
+	<tbody>
+	  {% assign number = 1 %}
+	  {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
+	  {% for fellow in fellows_by_commit  %}
+	  <tr>
+	    <th scope="row">{{ number }}</th>
+	    <td>{{ fellow.name }}</td>
+	    <td>{{ fellow.commits }}</td>
+	    {% assign number = number | plus: 1 %}
+	    {% endfor %}
+	  </tr>
+	</tbody>
       </table>
     </div>
   </div>
