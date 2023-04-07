@@ -76,6 +76,19 @@ a {
         font-size: small;
         color: #404040;
     }
+
+    .socials {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      column-gap: 10px;
+      justify-content: center;
+      border: 2px solid black;
+    }
+    
+    .socicon {
+      width: 65%;
+      height: 50%;
+    }
 }
 
 .icon {
