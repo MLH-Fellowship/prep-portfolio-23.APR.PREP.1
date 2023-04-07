@@ -11,9 +11,8 @@ module PodStats
 
     def generate(site)
       # list of MLH repos the pod is working on
-      repos = [{ 'name' => 'prep-portfolio-23.APR.PREP.1',
-                 'owner' => 'MLH-Fellowship' }]
-      fellows = site.data['fellows']
+      repos = site.data['projects'].map { |p| p['repo'] }
+      fellows = site.data['fellows'] # list of pod fellows
       # TODO: update 'name' with the actual key (e.g. 'github')
       # as soon as issue 13 gets solved
       usernames = fellows.map { |f| f['name'] }
@@ -24,6 +23,11 @@ module PodStats
         uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
         resp = Net::HTTP.get(uri)
         contributors = JSON.parse(resp)
+        unless contributors.instance_of?(Array)
+          msg = "Error with GET request to #{uri}"
+          msg += ": #{contributors['message']}" if contributors.instance_of?(Hash)
+          raise msg
+        end
 
         contributors.each do |contr|
           username = contr['author']['login']
