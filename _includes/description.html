@@ -4,26 +4,22 @@
     {% for item in site.data.fellows %}
     <div class="card">
       <div class="info">
-        <p class="title">{{ item.name }}</p>
-        <p class="location">{{ item.location }}</p>
-        <p class="socials">
-          <a href="" target="_blank">
-              <img
-                  src="assets/img/icons8-linkedin-circled-2.gif"
-                  alt="Linkedin"
-                  loading="lazy"
-                  class="socicon"
-              />
+        <p class="title"> {{ item.name }}</p>
+        <p class="location"> {{ item.location }}</p>
+        <div class="socials">
+          <a href="{{ item.linkedin | relative_url }}" target="_blank">
+            <img src="assets/img/icons8-linkedin-circled-2.gif" alt="Linkedin" loading="lazy" class="socicon" />
           </a>
-          <a href="" target="_blank">
-              <img
-                  src="assets/img/icons8-twitter.gif"
-                  alt="Twitter"
-                  loading="lazy"
-                  class="socicon"
-              />
+          <a href="{{ item.twitter | relative_url }}" target="_blank">
+            <img src="assets/img/icons8-twitter.gif" alt="Twitter" loading="lazy" class="socicon" />
           </a>
-      </p>
+          <a href="{{ item.github | relative_url }}" target="_blank">
+            <img src="assets/img/icons8-github.gif" alt="Github" loading="lazy" class="socicon" />
+          </a>
+          <a href="{{ item.resume | relative_url }}" target="_blank">
+            <img src="assets/img/icons8-resume.gif" alt="Resume" loading="lazy" class="socicon" />
+          </a>
+        </div>
       </div>
     </div>
     {% endfor %}
