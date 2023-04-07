@@ -4,12 +4,29 @@ title: Pod Statistics
 ---
 
 <div class="stats">
-  <h2>Pod repositories</h2>
-  {% for project in site.data.projects %}
-  <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
-    {{ project.repo.owner }}/{{ project.repo.name}}
-  </a>
-  {% endfor %}
+  <h2>Pod projects</h2>
+    <table>
+    <tr>
+      <th>Project name</th>
+      <th>Commits (pod members)</th>
+    </tr>
+    {% assign total = 0 %}
+    {% for project in page.projects %}
+        {% assign total = total | plus: project.repo.commits %}
+    <tr>
+      <td>
+	<a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
+	  {{ project.title }}
+	</a>
+      </td>
+      <td class="commits">{{ project.repo.commits }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>Total commits</td>
+      <td class="commits">{{ total }}</td>
+    </tr>
+    </table>
 
   <h2>Leaderboard</h2>
   <table>
@@ -18,17 +35,11 @@ title: Pod Statistics
       <th>Commits</th>
     </tr>
     {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
-    {% assign total = 0 %}
     {% for fellow in fellows_by_commit  %}
-    {% assign total = total | plus: fellow.commits %}
     <tr>
       <td>{{ fellow.name }}</td>
       <td class="commits">{{ fellow.commits }}</td>
       {% endfor %}
-    </tr>
-    <tr>
-      <td>Total commits</td>
-      <td class="commits">{{ total }}</td>
     </tr>
   </table>
 </div>
