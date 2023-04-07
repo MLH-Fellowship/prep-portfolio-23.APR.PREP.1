@@ -9,34 +9,62 @@
   }
 
   h1 {
-    margin: 2.5rem 0 2rem;
-  }
-  .credit {
-    color: grey;
-    display: flex;
-    font-size: 14px;
-
-    p:first-child {
-      margin-right: 15px;
-    }
+    margin: 2.5rem 0 3.5rem;
   }
 
   h2 {
-    font-family: 'Poppins';
+    font-size: 1.6rem;
+    margin: 0 0 3px 0;
   }
 }
 
-.posts-container {
-  max-width: 800px;
+.blog__posts {
+  max-width: 850px;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .post {
+  .blog__post {
+    display: flex;
+    gap: 3.5rem;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      gap: 0rem;
+    }
+
     &:not(:last-child) {
-      border-bottom: 1px solid #333;
-      margin-bottom: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    &--date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--day {
+      color: #0e2c57;
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 0;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
+    }
+
+    &--month-year {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    &--author {
+      color: #aaaaaa;
+      font-weight: 700;
+      text-transform: uppercase;
     }
   }
 }
