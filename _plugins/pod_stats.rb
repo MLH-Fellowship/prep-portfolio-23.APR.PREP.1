@@ -16,21 +16,32 @@ module PodStats
       # TODO: update 'name' with the actual key (e.g. 'github')
       # as soon as issue 13 gets solved
       usernames = fellows.map { |f| f['name'] }
-      fellows.each { |f| f['commits'] = 0 }
+      fellows.each { |f| f['merges'] = f['commits'] = 0 }
 
       projects.map { |p| p['repo'] }.each do |repo|
-        # get contributions by fellow
-        uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
-        resp = Net::HTTP.get(uri)
-        contributors = JSON.parse(resp)
-        unless contributors.instance_of?(Array)
-          msg = "Error with GET request to #{uri}"
-          msg += ": #{contributors['message']}" if contributors.instance_of?(Hash)
-          raise msg
+        # get merged pull requests
+        uri = URI(
+          "https://api.github.com/search/issues?q=repo:#{repo['owner']}/#{repo['name']}+is:pr+is:merged"
+        )
+        merges = get_as_json(uri)
+
+        repo['merged'] = 0
+        merges['items'].each do |merge|
+          username = merge['user']['login']
+          next unless usernames.include?(username)
+
+          repo['merged'] += 1
+          fellow = fellows.select { |f| f['name'] == username }
+          fellow['merged'] += 1
         end
 
+        # get contributions by fellow
+        uri = URI(
+          "https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors"
+        )
+        contributors = get_as_json(uri)
+
         repo['commits'] = 0
-        
         contributors.each do |contr|
           username = contr['author']['login']
           next unless usernames.include?(username)
@@ -46,6 +57,17 @@ module PodStats
       stats_page = site.pages.find { |page| page.name == 'stats.html' }
       stats_page.data['fellows'] = fellows
       stats_page.data['projects'] = projects
+    end
+
+    def get_as_json(uri)
+      resp = Net::HTTP.get(uri)
+      parsed = JSON.parse(resp)
+      if parsed.instance_of?(Hash) && !parsed['message'].nil?
+        msg = "Error with GET request to #{uri}"
+        msg += ": #{parsed['message']}"
+        raise msg
+      end
+      parsed
     end
   end
 end
