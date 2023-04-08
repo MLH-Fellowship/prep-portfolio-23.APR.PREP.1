@@ -1,0 +1,11 @@
+---
+layout: profile
+name: Ikeh Akinyemi
+title: Ikeh Akinyemi
+location: Nigeria
+university: University Of Port Harcourt
+about: I'm a Software Engineer, in love with Pure and Applied Mathematics and a knack for problem-solving.
+languages: Go, Rust, TypeScript and Python
+hobbies: Video games, travelling.
+img: /assets/img/fellows/ikeh.JPG
+---
