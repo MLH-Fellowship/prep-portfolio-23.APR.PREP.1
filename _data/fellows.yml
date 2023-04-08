@@ -1,15 +1,120 @@
-- name: Will
-  img: logo.jpg
-  location: London, UK
+- name: "Aksh Gupta"
+  location: "Delhi, India"
+  university: "JIIT, Noida"
+  about: "Always looking to expand my horizons and try out new things."	
+  languages: "Python"
+  hobbies: "Making Music"
+  img: "./aksh.jpg"
 
-- name: Amanda
-  img: amanda.jpg
-  location: New York City, USA
+- name: "Tomas Ortin"
+  location: "Spain"
+  university: " University of London"
+  about: "I'm passionate about programming language theory, compilers and interpreters. Graduate in Asian Cultural studies, currently a freshman in Computer Science. Notice the breath, relax and smile!"	
+  languages: "Scheme, C"
+  hobbies: "Hiking, reading"
+  img: "./tomas.jpg"
 
-- name: Aaron
-  img: aaron.jpg
-  location: London, UK
+- name: "Priyanka R."
+  location: "New Jersey, USA"
+  university: "University of Massachusetts"
+  about: "I'm a 3rd year studying at University of Massachusetts majoring in IT. Outside of classes and programming, I enjoy art. I have run an Art Club and been drawing for over the past 10 years. I prefer traditional mediums, specifically watercolor and charcoal."	
+  languages: "Java and Python"
+  hobbies: "Art and cooking. "
+  img: "./priyanka.png"
 
-- name: Swift
-  img: swift.jpg
-  location: New York City, USA
+- name: "Mamtha Patalay"
+  location: "Hyderabad, India"
+  university: "Institute of Aeronautical Engineering"
+  about: "Hey, I'm Mamtha. I love using my imagination and creativity to make beautiful Websites. Passionate about Art "	
+  languages: "Python, javascript"
+  hobbies: "Art, watching movies, listening to music"
+  img: "./mamtha.jpg"
+
+- name: "Josh"
+  location: "US"
+  university: "London School of Economics (LSE)"
+  about: "Aspiring software engineer."	
+  languages: "TypeScript, Python, C"
+  hobbies: "Bouldering, Binging Netflix, Playing poker card games"
+  img: "./josh.png"
+
+
+- name: "Jessie Lin"
+  location: "New York"
+  university: "Hunter College"
+  about: ">Hello, my name's Jessie. I love listening to music and is very interested in learning new things everyday "	
+  languages: "Python and C++"
+  hobbies: "Listening to music"
+  img: "./jessie.jpg"
+
+- name: "Ikeh Akinyemi"
+  location: "Nigeria"
+  university: "University Of Port Harcourt"
+  about: "I'm a Software Engineer, in love with Pure and Applied Mathematics and a knack for problem-solving."	
+  languages: "Go, Rust, TypeScript and Python"
+  hobbies: "Video games, travelling."
+  img: "./ikeh.jpg"
+
+- name: "Abirami"
+  location: "Toronto, Ontario, Canada"
+  university: "University of Waterloo"
+  about: "Hey! I'm Abirami and I'm a second year computer science student at the University of Waterloo. I like exploring new technologies and learning new things. I'm excited to be here and am looking forward to getting to know other people!"	
+  languages: "Python"
+  hobbies: "Watching Netflix and Baking"
+  img: "./abirami.jpg"
+
+- name: "Archi Kirar"
+  location: "Bhopal, Madhya Pradesh"
+  university: "Sage University bhopal"
+  about: "I'm a Btech CSE hons second year student. I have passion of technology to boost my skills and experience."	
+  languages: "Java"
+  hobbies: "Dancing and traveling"
+  img: "./archi.jpg"
+
+- name: "Daniel Yu"
+  location: "New York City"
+  university: "Northeastern University"
+  about: "Hi, this is Daniel. I'm an ambitious and driven college student pursuing a Math and Computer Science combined Bachelor's degree at Northeastern University. I'm an active member of my school's Electric Car Racing team, Student Investment Fund, and am interested in software engineering, data analytics, and quantitative finance."	
+  languages: "Python and C++"
+  hobbies: "Exercising, listening to music"
+  img: "./Daniel.jpg"
+
+- name: "Kristin Lam"
+  location: "New York, United States"
+  university: "Villanova University"
+  about: "I'm Kristin and I love creating things on the web. After graduating with a degree in Computer Science, I designed and developed webpages and emails for a homeless nonprofit, followed by a cancer treatment and research institution. I'm passionate about sustainability, mental health, and equality and diversity, and have always found fulfillment in using my technical skills to help others. To level up my skills, I attended The Grace Hopper Coding Bootcamp. Now, I’m ready to make a difference as a software engineer."	
+  languages: "JavaScript"
+  hobbies: "Crocheting, cooking, reading, playing video games"
+  img: "./kristin.jpeg"
+
+- name: "Lakshya Gupta"
+  location: "India"
+  university: "Bharati Vidyapeeth's College of Engineering"
+  about: "Web Developer by day, Blockchain Enthusiast by night. I am a part-time engineer and a full-time tech lover. Life is too short, just checkmate and move on."	
+  languages: "Javascript, Python, Rust"
+  hobbies: "Chess & Hip Hop music"
+  img: "./lakshya.jpg"
+
+- name: "Akansha"
+  location: "Bhopal, Madhya Pradesh"
+  university: "Mits, Gwalior"
+  about: "I'm a third-year computer science student with a keen interest in front-end development. I enjoy learning new things and taking on new challenges. Along with all of this, I enjoy participating in hackathons, networking with new people,"	
+  languages: "JavaScript and Python"
+  hobbies: "Binge watching dramas"
+  img: "./akansha.jpg"
+
+- name: "Ankur Agarwal"
+  location: "Aligarh, India"
+  university: "Indian Institute of Information Technology Kota "
+  about: "Talks about Development, Linux, Community | MLH Prep Fellow'23 | Google DSC Lead'22 | Microsoft Learn Student Ambassador | MERN Stack Developer | Devops 🚀"	
+  languages: "Javascript, C++ and python"
+  hobbies: "Listening songs, playing piano and networking talks."
+  img: "./Ankur.jpg"
+
+- name: "Jay Gala"
+  location: "Mumbai, India"
+  university: "NMIMS University, Mumbai"
+  about: "I am a pre-final year CSE and MBA student at NMIMS Mumbai. I have worked as an intern at GeeksforGeeks, Conbi, Transparent Capital and Analytica. I also regularly contribute code to open source projects like Mozilla Firefox, TensorFlow, Ivy and Keras. I am also a TensorFlow Certified Developer and the Co-Founder of Codechef Mpstme Chapter."	
+  languages: "Python and C++"
+  hobbies: "Fitness, Chess and Reading (currently reading Harry Potter and the Order of the Phoenix)"
+  img: "./Jay.jpg"
