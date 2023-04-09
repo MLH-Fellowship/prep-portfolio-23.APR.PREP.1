@@ -29,7 +29,7 @@
     providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
         // API Key to be passed to the ArcGIS Online Geocoding Service
-        apikey: 'AAPKf280bd2ee4054c18b59eaa00be4726efg6MGfnRo4kPKYL4dbrEuqNQzWaVcdEi4XeeD8vHHPYTRPhrNfivU9XKZ-hlZhequ'
+        apikey: 'AAPKbb0ce613abb94c1cb9c5b6562339b286iDRhLY2_AoA42kQbZIu8-kltaKO1sfrOHnUUglbGu-JdA8Vjyn-bpuSN_Co-J8q0'
         })
     ]
     }).addTo(mymap);
@@ -41,7 +41,7 @@
     for (var i = 0; i < fellows_information.length - 1; i++) {
         (function (index) {
             // converts the location string into a dictionary of lists of dictionaries that contains the latlng 
-            L.esri.Geocoding.geocode({apikey: 'AAPKf280bd2ee4054c18b59eaa00be4726efg6MGfnRo4kPKYL4dbrEuqNQzWaVcdEi4XeeD8vHHPYTRPhrNfivU9XKZ-hlZhequ'}).text(fellows_information[i]['location']).run(function (err, response) {
+            L.esri.Geocoding.geocode({apikey: 'AAPKbb0ce613abb94c1cb9c5b6562339b286iDRhLY2_AoA42kQbZIu8-kltaKO1sfrOHnUUglbGu-JdA8Vjyn-bpuSN_Co-J8q0'}).text(fellows_information[i]['location']).run(function (err, response) {
                 if (err) {
                     console.log(err);
                     return;
@@ -54,9 +54,17 @@
                 //console.log(fellows_information[i]); // output to console for testing purposes
 
                 // TODO: Add the popup for each marker containing the fellows information in cards such as their name, location, and description.
-                marker.bindPopup(`<h5>${fellows_information[index]['name']}</h5>
-                                <p>${fellows_information[index]['location']}</p>
-                                <p>${fellows_information[index]['description']}</p>`);
+                //marker.bindPopup(`<h5>${fellows_information[index]['name']}</h5>
+                //                <p>${fellows_information[index]['location']}</p>
+                //                <p>${fellows_information[index]['description']}</p>`);
+
+                 //img src="${fellows_information[index]['image_url']}" alt="${fellows_information[index]['name']}" style="max-width:100%;">
+
+                marker.bindPopup(`<div class="popup-content">
+                    <img src="/assets/img/amanda.jpg" />
+                    <h5>${fellows_information[index]['name']}</h5>
+                    <p>${fellows_information[index]['location']}</p>
+                    <p>${fellows_information[index]['description']}</p></div>`, { className: 'popup-style' });
 
                 
                 // Wait for Issue #9 to close
