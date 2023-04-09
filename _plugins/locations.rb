@@ -12,10 +12,10 @@ module PodLocations
             fellows.each do |fellow|
                 location = fellow['location']
                 name = fellow['name']
-                  # add a description when Issue #9 is closed
+            
                 description = fellow['description']
                 # this creates a dictionary assigning the key value pairs, add description using same format once issue#9 is closed
-                #fellow_information = {'name' => name, 'location' => location}
+               
                 fellow_information = {'name' => name, 'location' => location, 'description' => description}
                 # this creates an array of dictionaries 
                 fellows_information.push(fellow_information)
@@ -24,10 +24,7 @@ module PodLocations
             site.data['fellows_information'] = fellows_information
         end
     end
-    
-    # Output the JSON string to the HTML file
-    #File.open('_data/location_list.json', 'w') do |file|
-    #    file.write(json_location_list)
+
 end
 
   

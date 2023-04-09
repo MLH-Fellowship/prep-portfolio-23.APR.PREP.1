@@ -3,25 +3,12 @@
 </div>
 
 
-
-
-
 <script>
     var fellows_information = {{ site.data.fellows_information | jsonify }};
-    //var fellows_information = {% assign json_fellows_info = site.data.fellows_information | jsonify %}{{ json_fellows_info }};
 
     const mymap = L.map('map').setView([51.505, -0.09], 2);
 
-    //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //    maxZoom: 19,
-    //    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    //}).addTo(mymap);
-
     var tiles = L.esri.basemapLayer("Streets").addTo(mymap);
-
-    //var tiles = L.esri.Vector.vectorBasemapLayer("ArcGIS:Streets", {
-    //    apikey: 'YOUR API KEY HERE'
-    //  }).addTo(mymap);
 
 
     // create the geocoding control and add it to the map
@@ -29,7 +16,7 @@
     providers: [
         L.esri.Geocoding.arcgisOnlineProvider({
         // API Key to be passed to the ArcGIS Online Geocoding Service
-        apikey: ' '
+        apikey: 'YOUR API KEY'
         })
     ]
     }).addTo(mymap);
@@ -41,7 +28,7 @@
     for (var i = 0; i < fellows_information.length - 1; i++) {
         (function (index) {
             // converts the location string into a dictionary of lists of dictionaries that contains the latlng 
-            L.esri.Geocoding.geocode({apikey: ' '}).text(fellows_information[i]['location']).run(function (err, response) {
+            L.esri.Geocoding.geocode({apikey: 'YOUR API KEY'}).text(fellows_information[i]['location']).run(function (err, response) {
                 if (err) {
                     console.log(err);
                     return;
@@ -49,17 +36,7 @@
 
                 marker = L.marker(response['results'][0]['latlng']);
 
-                console.log(index)
-                console.log(fellows_information)
-                //console.log(fellows_information[i]); // output to console for testing purposes
-
-                // TODO: Add the popup for each marker containing the fellows information in cards such as their name, location, and description.
-                //marker.bindPopup(`<h5>${fellows_information[index]['name']}</h5>
-                //                <p>${fellows_information[index]['location']}</p>
-                //                <p>${fellows_information[index]['description']}</p>`);
-
-                 //img src="${fellows_information[index]['image_url']}" alt="${fellows_information[index]['name']}" style="max-width:100%;">
-
+               //popup for each marker containing the fellows information in cards such as their name, location, and description.
                 marker.bindPopup(`<div class="popup-content">
                
                     <img src="/assets/img/${fellows_information[index]['name']}.jpg" />
@@ -67,11 +44,7 @@
                     <p>${fellows_information[index]['location']}</p>
                     <p>${fellows_information[index]['description']}</p></div>`, { className: 'popup-style' });
 
-                
-                // Wait for Issue #9 to close
-                // indexs into response to get the lat and long
-                //results.addLayer(L.marker(response['results'][0]['latlng']))
-
+            
                 results.addLayer(marker)
             });
          })(i);
