@@ -3,6 +3,7 @@
 @import 'navbar';
 @import 'profile';
 @import 'page';
+@import 'fellowprofile';
 
 .card-container {
     display: grid;
@@ -49,8 +50,18 @@ h2 {
     border-radius: .375rem;
     padding: 1.5em;
     font-size: 1.2em;
-}
-
+    transition: transform 0.5s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    background-color: #074eb1c4;
+    color: white;
+    .dates, .about {
+      color: white;
+      text-decoration: none;
+    }
+  }
 a {
     color: black;
 }
@@ -72,10 +83,16 @@ a {
         font-weight: 400;
     }
 
+    .about {
+      font-size: small;
+      font-weight: 400;
+    }
+
     .dates {
         font-size: small;
         color: #404040;
     }
+
 }
 
 .icon {
