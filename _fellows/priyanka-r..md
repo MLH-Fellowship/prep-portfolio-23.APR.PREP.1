@@ -1,0 +1,11 @@
+---
+layout: profile
+name: Priyanka R.
+title: Priyanka R.
+location: New Jersey, USA
+university: University of Massachusetts
+about: I'm a 3rd year studying at University of Massachusetts majoring in IT. Outside of classes and programming, I enjoy art. I have run an Art Club and been drawing for over the past 10 years. I prefer traditional mediums, specifically watercolor and charcoal.
+languages: Java and Python
+hobbies: Art and cooking. 
+img: /assets/img/fellows/priyanka.png
+---
