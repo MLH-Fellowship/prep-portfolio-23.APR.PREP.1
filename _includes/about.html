@@ -1,0 +1,15 @@
+<h2>About</h2>
+<div class="card-container">
+    {% for item in site.data.about %}
+      <div class="card">
+        <a class="about" href={{item.link}} target="_blank">
+          <div class="info">
+            <p class="title">{{ item.title }}</p>
+            <p class="description">{{ item.description }}</p>
+          </div>
+        </a>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  

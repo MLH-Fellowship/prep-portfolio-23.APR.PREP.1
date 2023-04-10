@@ -4,5 +4,3 @@ _site
 .jekyll-metadata
 vendor
 .bundle
-gemfile
-_data/fellows.yml

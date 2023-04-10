@@ -1,63 +1,120 @@
-- name: Will
-  img: logo.jpg
-  location: London, UK
-  description: krltl
+- name: "Aksh Gupta"
+  title: "Aksh Gupta"
+  location: "Delhi, India"
+  university: "JIIT, Noida"
+  about: "Always looking to expand my horizons and try out new things."	
+  languages: "Python"
+  hobbies: "Making Music"
+  img: "/assets/img/fellows/aksh.jpg"
+  url: "/aksh"
 
-- name: Amanda
-  img: amanda.jpg
-  location: New York City, USA
-  description: krltl
+- name: "Tomas Ortin"
+  title: "Tomas Ortin"
+  location: "Spain"
+  university: " University of London"
+  about: "I'm passionate about programming language theory, compilers and interpreters. Graduate in Asian Cultural studies, currently a freshman in Computer Science. Notice the breath, relax and smile!"	
+  languages: "Scheme, C"
+  hobbies: "Hiking, reading"
+  img: "/assets/img/fellows/tomas.jpg"
 
-- name: Aaron
-  img: aaron.jpg
-  location: London, UK
-  description: krltl
+- name: "Priyanka R."
+  title: "Priyanka R."
+  location: "New Jersey, USA"
+  university: "University of Massachusetts"
+  about: "I'm a 3rd year studying at University of Massachusetts majoring in IT. Outside of classes and programming, I enjoy art. I have run an Art Club and been drawing for over the past 10 years. I prefer traditional mediums, specifically watercolor and charcoal."	
+  languages: "Java and Python"
+  hobbies: "Art and cooking. "
+  img: "/assets/img/fellows/priyanka.png"
 
-- name: Swift
-  img: swift.jpg
-  location: New York City, USA
-  description: krltl
+- name: "Mamtha Patalay"
+  title: "Mamtha Patalay"
+  location: "Hyderabad, India"
+  university: "Institute of Aeronautical Engineering"
+  about: "Hey, I'm Mamtha. I love using my imagination and creativity to make beautiful Websites. Passionate about Art "	
+  languages: "Python, javascript"
+  hobbies: "Art, watching movies, listening to music"
+  img: "/assets/img/fellows/mamtha.jpg"
 
-- name: A
-  location: Hyderabad india
-  description: krltl
+- name: "Josh"
+  title: "Josh"
+  location: "London, UK"
+  university: "London School of Economics (LSE)"
+  about: "Aspiring software engineer."	
+  languages: "TypeScript, Python, C"
+  hobbies: "Bouldering, Binging Netflix, Playing poker card games"
+  img: "/assets/img/fellows/josh.png"
 
-- name: B
-  location: Aligarh, India
-  description: krltl
 
-- name: C
-  location: India
-  description: krltl
+- name: "Jessie Lin"
+  title: "Jessie Lin"
+  location: "New York"
+  university: "Hunter College"
+  about: "Hello, my name's Jessie. I love listening to music and is very interested in learning new things everyday "	
+  languages: "Python and C++"
+  hobbies: "Listening to music"
+  img: "/assets/img/fellows/jessie.jpg"
 
-- name: D
-  location: Toronto, Ontario, Canada
-  description: krltl
+- title: "Ikeh Akinyemi"
+  name: "Ikeh Akinyemi"
+  location: "Nigeria"
+  university: "University Of Port Harcourt"
+  about: "I'm a Software Engineer, in love with Pure and Applied Mathematics and a knack for problem-solving."	
+  languages: "Go, Rust, TypeScript and Python"
+  hobbies: "Video games, travelling."
+  img: "/assets/img/fellows/ikeh.JPG"
+  
 
-- name: E
-  location: New York, United States
-  description: krltl
+- title: "Abirami Karthikeyan"
+  name: "Abirami Karthikeyan"
+  location: "Toronto, Ontario, Canada"
+  university: "University of Waterloo"
+  about: "Hey! I'm Abirami and I'm a second year computer science student at the University of Waterloo. I like exploring new technologies and learning new things. I'm excited to be here and am looking forward to getting to know other people!"	
+  languages: "Python"
+  hobbies: "Watching Netflix and Baking"
+  img: "/assets/img/fellows/abirami.jpg"
 
-- name: F
-  location: Mumbai, India
-  description: krltl
+- title: "Archi Kirar"
+  name: "Archi Kirar"
+  location: "Bhopal, Madhya Pradesh"
+  university: "Sage University bhopal"
+  about: "I'm a Btech CSE hons second year student. I have passion of technology to boost my skills and experience."	
+  languages: "Java"
+  hobbies: "Dancing and traveling"
+  img: "/assets/img/fellows/archi.jpg"
 
-- name: G
-  location: New York City
-  description: krltl
+- title: "Daniel Yu"
+  name: "Daniel Yu"
+  location: "New York City"
+  university: "Northeastern University"
+  about: "Hi, this is Daniel. I'm an ambitious and driven college student pursuing a Math and Computer Science combined Bachelor's degree at Northeastern University. I'm an active member of my school's Electric Car Racing team, Student Investment Fund, and am interested in software engineering, data analytics, and quantitative finance."	
+  languages: "Python and C++"
+  hobbies: "Exercising, listening to music"
+  img: "/assets/img/fellows/Daniel.jpg"
 
-- name: H
-  location: Bhopal madhya pradesh India
-  description: krltl
+- title: "Kristin Lam"
+  name: "Kristin Lam"
+  location: "New York, United States"
+  university: "Villanova University"
+  about: "I'm Kristin and I love creating things on the web. After graduating with a degree in Computer Science, I designed and developed webpages and emails for a homeless nonprofit, followed by a cancer treatment and research institution. I'm passionate about sustainability, mental health, and equality and diversity, and have always found fulfillment in using my technical skills to help others. To level up my skills, I attended The Grace Hopper Coding Bootcamp. Now, I’m ready to make a difference as a software engineer."	
+  languages: "JavaScript"
+  hobbies: "Crocheting, cooking, reading, playing video games"
+  img: "/assets/img/fellows/kristin.jpeg"
 
-- name: I
-  location: Delhi, India
-  description: krltl
+- title: "Lakshya Gupta"
+  name: "Lakshya Gupta"
+  location: "India"
+  university: "Bharati Vidyapeeth's College of Engineering"
+  about: "Web Developer by day, Blockchain Enthusiast by night. I am a part-time engineer and a full-time tech lover. Life is too short, just checkmate and move on."	
+  languages: "Javascript, Python, Rust"
+  hobbies: "Chess & Hip Hop music"
+  img: "/assets/img/fellows/lakshya.jpg"
 
-- name: J
-  location: New York, NY
-  description: krltl
 
-- name: K
-  location: New Jersey, USA
-  description: krltl
+- title: "Jay Gala"
+  name: "Jay Gala"
+  location: "Mumbai, India"
+  university: "NMIMS University, Mumbai"
+  about: "I am a pre-final year CSE and MBA student at NMIMS Mumbai. I have worked as an intern at GeeksforGeeks, Conbi, Transparent Capital and Analytica. I also regularly contribute code to open source projects like Mozilla Firefox, TensorFlow, Ivy and Keras. I am also a TensorFlow Certified Developer and the Co-Founder of Codechef Mpstme Chapter."	
+  languages: "Python and C++"
+  hobbies: "Fitness, Chess and Reading (currently reading Harry Potter and the Order of the Phoenix)"
+  img: "/assets/img/fellows/Jay.jpg"
