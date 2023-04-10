@@ -56,8 +56,9 @@ h2 {
     transform: scale(1.05);
     background-color: #074eb1c4;
     color: white;
-    .dates {
+    .dates, .about {
       color: white;
+      text-decoration: none;
     }
   }
 a {
@@ -81,10 +82,16 @@ a {
         font-weight: 400;
     }
 
+    .about {
+      font-size: small;
+      font-weight: 400;
+    }
+
     .dates {
         font-size: small;
         color: #404040;
     }
+
 }
 
 .icon {
