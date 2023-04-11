@@ -31,13 +31,15 @@ module PodStats
       uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
       contributors = get_as_json(uri)
       contributors.each do |contr|
-        username = contr['author']['login']
+        username = contr['author']['login'].downcase
         next unless usernames.include?(username)
 
         commits = contr['total'].to_i
         repo['commits'] += commits
         fellow = fellows.detect { |f| f['github'] == username }
+        puts fellow['github']
         fellow['commits'] += commits
+        puts fellow['commits']
       end
     end
 
