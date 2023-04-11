@@ -7,13 +7,9 @@ module FellowsPlugin
       fellows.each do |fellow|
         fellow['url'] = fellow['name'].downcase.gsub(' ', '-').tr('.', '')
                           .to_s
-        puts fellow['url']
-        page = FellowPage.new(site, fellow)
-        site.pages << page
+        site.pages << FellowPage.new(site, fellow)
       end
       site.data['fellows'] = fellows
-      page = site.pages.find { |p| p.name == "jay-gala.md" }
-      puts page.data
     end
   end
 
