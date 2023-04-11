@@ -37,9 +37,7 @@ module PodStats
         commits = contr['total'].to_i
         repo['commits'] += commits
         fellow = fellows.detect { |f| f['github'] == username }
-        puts fellow['github']
         fellow['commits'] += commits
-        puts fellow['commits']
       end
     end
 
