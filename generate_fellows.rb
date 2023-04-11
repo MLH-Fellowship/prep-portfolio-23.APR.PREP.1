@@ -1,6 +1,11 @@
 require 'yaml'
 
 require 'fileutils'
+
+config = YAML.load_file('config.yml')
+api_key = config['api_key']
+
+
 FileUtils.mkdir_p '_fellows'
 
 fellows = YAML.load_file('_data/fellows.yml')

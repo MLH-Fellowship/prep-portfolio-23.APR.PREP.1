@@ -10,13 +10,20 @@ module PodLocations
             fellows = site.data['fellows']
 
             fellows.each do |fellow|
-                location = fellow['location']
+                title = fellow['title']
                 name = fellow['name']
-            
-                description = fellow['description']
+                
+                location = fellow['location']
+                university = fellow['university']
+                about = fellow['about']
+                languages = fellow['languages']
+                hobbies = fellow['hobbies']
+                img = fellow['img']
                 # this creates a dictionary assigning the key value pairs, add description using same format once issue#9 is closed
                
-                fellow_information = {'name' => name, 'location' => location, 'description' => description}
+                #fellow_information = {'title' => title, 'name' => name, 'location' => location, 'university' => university, 'about' => about,
+                #                    'languages' => languages, 'hobbies' => hobbies, 'img' => img}
+                fellow_information = {'title' => title, 'name' => name, 'location' => location, 'about' => about}
                 # this creates an array of dictionaries 
                 fellows_information.push(fellow_information)
             end
@@ -27,4 +34,3 @@ module PodLocations
 
 end
 
-  
