@@ -14,15 +14,5 @@ collections:
   fellows:
     output: true
 
-plugins_dir: _plugins
-
-plugins:
-  - generate_plugin
-  - jekyll-paginate
-  - jekyll-seo-tag
-
-
-safe: true
-
 icon: /assets/img/icon.jpg
 
