@@ -2,17 +2,51 @@
     <input hidden type="checkbox" class="darkthemetoggle" id="darkthemetoggle">
   <label for="darkthemetoggle" class="darkthemelabel">
     <div class='slider'>
-        <i class="fa-solid fa-moon" style="color: #ffffff;"></i>
+      <img class="moon" src="./assets/img/moon.png">
     </div>
   </label>
   </div>
   
   <script>
-    const darkTheme = document.getElementById('darkthemetoggle');
+    //const darkTheme = document.getElementById('darkthemetoggle');
   
-  darkTheme.addEventListener('change', ()=>{
-  document.body.classList.toggle('dark');
-  })
+  //darkTheme.addEventListener('change', ()=>{
+ // document.body.classList.toggle('dark');
+
+  
+  //})
+
+  const darkTheme = document.getElementById('darkthemetoggle');
+  const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  function setTheme() {
+    if (darkTheme.checked) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
+  
+  darkTheme.addEventListener('change', setTheme);
+  
+  systemDarkMode.addEventListener('change', () => {
+    if (systemDarkMode.matches) {
+      document.body.classList.add('dark');
+      darkTheme.checked = true;
+    } else {
+      document.body.classList.remove('dark');
+      darkTheme.checked = false;
+    }
+  });
+  
+  if (systemDarkMode.matches) {
+    document.body.classList.add('dark');
+    darkTheme.checked = true;
+  }
+  
+  setTheme();
+  
+
   
   
   </script>

@@ -41,16 +41,19 @@
   }
   
 
-  .fa-moon {
+  .moon {
     visibility: hidden;
-    padding: 2.3px 3.5px;
+    //padding: 0 3.5px;
+    padding-right: 6px;
     position: absolute;
+    //width: 20px;
+    height: 20px;
   }
   /*  target the elemenent after the label*/
   .darkthemetoggle:checked + .darkthemelabel .slider{
     transform: translateX(24px);
     background-color: transparent;
-    .fa-moon{
+    .moon{
       visibility: visible;
     }
   }
