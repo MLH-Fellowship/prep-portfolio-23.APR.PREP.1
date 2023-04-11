@@ -1,4 +1,11 @@
-p, h1, h2, h3, h4, h5, h6, button {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
     font-family: "Open Sans", serif;
 }
 
@@ -9,8 +16,8 @@ h2 {
 body {
     background-color: #f5f5f9 !important;
     background-size: cover;
-    width: auto!important; 
-    overflow-x: hidden!important;
+    width: auto !important;
+    overflow-x: hidden !important;
     font-family: "Open Sans", serif;
 }
 
@@ -21,16 +28,22 @@ body {
 }
 
 .banner .logo {
-    max-width:180px;
-    max-height:60px;
+    max-width: 180px;
+    max-height: 60px;
     width: auto;
     height: auto;
+}
+
+.banner .logo img {
+    width: 100%;
+    padding-bottom: 5px;
 }
 
 .banner .title {
     color: white;
     font-size: 50px;
     font-weight: 700;
+    padding-bottom: 5px;
 }
 
 .page {
@@ -102,15 +115,15 @@ hr {
 }
 
 @media screen and (max-width: 768px) {
-    
+
     .banner {
         padding: 20px 0px 20px 0px;
-        height: 110px;
+        height: 120px;
     }
 
     .banner .logo {
-        max-width:150px;
-        max-height:60px;
+        max-width: 150px;
+        max-height: 60px;
         width: auto;
         height: auto;
     }
@@ -128,7 +141,7 @@ hr {
     .page h2 {
         font-size: 1.2rem !important;
     }
-    
+
     .page h4 {
         font-size: 0.8rem !important;
     }
