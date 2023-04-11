@@ -7,7 +7,6 @@
   languages: "Python"
   hobbies: "Making Music"
   img: "/assets/img/fellows/aksh.jpg"
-  url: "/aksh"
 
 - name: "Tomas Ortin"
   title: "Tomas Ortin"
@@ -48,7 +47,6 @@
   languages: "TypeScript, Python, C"
   hobbies: "Bouldering, Binging Netflix, Playing poker card games"
   img: "/assets/img/fellows/josh.png"
-
 
 - name: "Jessie Lin"
   title: "Jessie Lin"
