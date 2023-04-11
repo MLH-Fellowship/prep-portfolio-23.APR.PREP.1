@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body.dark{
+    background-color: #1e1e1e;
+    color: white;
+  }
+  .darkthemetoggle {
+    position: relative;
+  }
+  
+  .darkthemelabel {
+    position: fixed;
+    top: 15vh;
+    right: 2vw;
+    width: 50px;
+    height: 26px;
+    background-color:#111;
+    display: flex;
+    border-radius:50px;
+    align-items: center;
+    padding: 5px;
+    // position: relative;
+    transform: scale(1.5);
+    z-index: 400;
+    transition: ease-in-out 0.5s;
+    outline: 1px solid rgba(255, 255, 255, 0.189);
+    
+  }
+  
+  .slider {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    // top: 2.5px;
+    left: 2.5px;
+    border-radius: 50%;
+    transition: ease-in-out 0.3s;
+  }
+  
+
+  .fa-moon {
+    visibility: hidden;
+    padding: 2.3px 3.5px;
+    position: absolute;
+  }
+  /*  target the elemenent after the label*/
+  .darkthemetoggle:checked + .darkthemelabel .slider{
+    transform: translateX(24px);
+    background-color: transparent;
+    .fa-moon{
+      visibility: visible;
+    }
+  }
+

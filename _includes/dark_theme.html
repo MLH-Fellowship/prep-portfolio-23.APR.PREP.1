@@ -1,0 +1,21 @@
+<div>
+    <input hidden type="checkbox" class="darkthemetoggle" id="darkthemetoggle">
+  <label for="darkthemetoggle" class="darkthemelabel">
+    <div class='slider'>
+        <i class="fa-solid fa-moon" style="color: #ffffff;"></i>
+    </div>
+  </label>
+  </div>
+  
+  <script>
+    const darkTheme = document.getElementById('darkthemetoggle');
+  
+  darkTheme.addEventListener('change', ()=>{
+  document.body.classList.toggle('dark');
+  })
+  
+  
+  </script>
+  <script src="https://kit.fontawesome.com/ce90223bac.js" crossorigin="anonymous"></script>
+  
+  
