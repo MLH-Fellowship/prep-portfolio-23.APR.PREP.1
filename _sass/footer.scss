@@ -2,11 +2,13 @@
   background-color: #133667;
   position:absolute;
   width:100%;
+  margin-right:auto;
 }
 
 .foot-container,
 .links {
   display:flex;
+  align-items: center;
   justify-content:center;
 } 
 
@@ -18,8 +20,9 @@
 .links {
   font-family: "Poppins", serif;
   font-weight: 700 !important;
-  margin-top:10px;
-  padding-left:40px;
+  margin-top: 10px;
+  width:auto;
+  margin-right:auto;
 }
 
 .links a {
