@@ -1,4 +1,7 @@
 - name: Home
   link: /
+- name: Blog
+  link: /blog.html
 - name: Pod Stats
   link: /stats.html
+
