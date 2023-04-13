@@ -1,8 +1,15 @@
 - title: Portfolio Website
   event: MLH Prep Pod Project
   date: April 2023
-  page-name: project
+  page-name: portfolio
   repo:
     owner: MLH-Fellowship
     name: prep-portfolio-23.APR.PREP.1
 
+- title: Weather App
+  event: MLH Prep Pod Project
+  date: April 2023
+  page-name: portfolio
+  repo:
+    owner: MLH-Fellowship
+    name: prep-project-23.APR.PREP.1
