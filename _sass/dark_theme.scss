@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body.dark{
+  background-color: #1e1e1e;
+  color: white;
+}
+.darkthemetoggle {
+  position: relative;
+  top:93vh;
+}
+
+.darkthemelabel {
+  top: 93vh;
+  right: 2.3vw;
+  width: 45px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:80px;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  // transform: scale(1);
+  z-index: 400;
+  transition: ease-in-out 0.5s;
+  outline: 1px solid rgba(255, 255, 255, 0.189);
+  
+}
+
+.slider {
+  transform: translateX(18px);
+
+  width: 18px;
+  height: 18px;
+  background-color: rgb(255, 220, 66);
+  align-items: center;
+  display: flex;
+  // position: absolute;
+  // top: 2.5px;
+  // left: 2.5px;
+  border-radius: 50%;
+  transition:cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+
+.fa-moon {
+  visibility: hidden;
+  top: 0; 
+  // margin: 0;
+  //padding: 0 3.5px;
+  // padding-right: 6px;
+}
+/*  target the elemenent after the label*/
+.darkthemetoggle:checked + .darkthemelabel .slider{
+  transform: translateX(0.5px);
+  background-color: transparent;
+  .fa-moon{
+    visibility: visible;
+  }
+}
+

@@ -8,13 +8,13 @@
           <p class="title"> {{ fellow.name }}</p>
           <p class="location"> {{ fellow.location }}</p>
           <div class="socials">
-            <a href="{{ fellow.linkedin | relative_url }}" target="_blank">
+            <a href="https://linkedin.com/in/{{ fellow.linkedin }}" target="_blank">
               <img src="assets/img/icons8-linkedin-circled-2.gif" alt="Linkedin" loading="lazy" class="socicon" />
             </a>
-            <a href="{{ fellow.twitter | relative_url }}" target="_blank">
+            <a href="https://twitter.com/{{ fellow.twitter }}" target="_blank">
               <img src="assets/img/icons8-twitter.gif" alt="Twitter" loading="lazy" class="socicon" />
             </a>
-            <a href="{{ fellow.github | relative_url }}" target="_blank">
+            <a href="https://github.com/{{ fellow.github }}" target="_blank">
               <img src="assets/img/icons8-github.gif" alt="Github" loading="lazy" class="socicon" />
             </a>
             <a href="{{ fellow.resume | relative_url }}" target="_blank">

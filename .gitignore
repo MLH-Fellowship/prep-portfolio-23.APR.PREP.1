@@ -5,6 +5,4 @@ _site
 vendor
 .bundle
 .bashrc
-config.yml
 Gemfile.lock
-.gitignore
