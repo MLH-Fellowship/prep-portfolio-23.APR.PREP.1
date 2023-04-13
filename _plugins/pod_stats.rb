@@ -30,6 +30,7 @@ module PodStats
       usernames = fellows.map { |f| f['github'] }
       uri = URI("https://api.github.com/repos/#{repo['owner']}/#{repo['name']}/stats/contributors")
       contributors = get_as_json(uri)
+
       contributors.each do |contr|
         username = contr['author']['login'].downcase
         next unless usernames.include?(username)
