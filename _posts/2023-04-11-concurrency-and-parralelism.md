@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Chukwuka Ikeh
-title: Brief introduction to Concurrency and parallelism
+title: Brief Introduction to Concurrency and Parallelism
 headline: Optional headline goes here
 ---
 
