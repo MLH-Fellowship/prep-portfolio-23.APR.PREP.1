@@ -1,0 +1,47 @@
+<div>
+  <input hidden type="checkbox" class="darkthemetoggle" id="darkthemetoggle">
+  <label for="darkthemetoggle" class="darkthemelabel">
+    <div class="slider">
+      <i class="fa-solid fa-moon fa-nm" style="color: #ffffff;"></i>
+    </div>
+  </label>
+</div>
+
+<script>
+
+const darkTheme = document.getElementById('darkthemetoggle');
+const systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+function setTheme() {
+  if (darkTheme.checked) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
+}
+
+darkTheme.addEventListener('change', setTheme);
+
+systemDarkMode.addEventListener('change', () => {
+  if (systemDarkMode.matches) {
+    document.body.classList.add('dark');
+    darkTheme.checked = true;
+  } else {
+    document.body.classList.remove('dark');
+    darkTheme.checked = false;
+  }
+});
+
+if (systemDarkMode.matches) {
+  document.body.classList.add('dark');
+  darkTheme.checked = true;
+}
+
+setTheme();
+
+
+
+
+</script>
+<script src="https://kit.fontawesome.com/ce90223bac.js" crossorigin="anonymous"></script>
+
