@@ -22,14 +22,17 @@
   .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .darkthemelabel{
+    right:3.2vw;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .card-container {
     grid-template-columns: 1fr;
   }
-  .darkthemelabel {
-    top: 20vh;
+  .darkthemelabel{
+    right:3.6vw;
   }
 
 }
