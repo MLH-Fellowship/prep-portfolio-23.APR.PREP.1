@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="post__heading">
+    <h2>{{ page.title }}</h2>
+    <h3>{{page.headline}}</h3>
+    <p>
+      <span class="post__author">{{ page.author }}</span> •
+      <span>{{ page.date | date_to_string }}</span>
+    </p>
+  </div>
+  <div class="post__content">{{ content }}</div>
+</div>
