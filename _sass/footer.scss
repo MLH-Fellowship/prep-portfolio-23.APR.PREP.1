@@ -1,0 +1,55 @@
+.foot {
+  background-color: #133667;
+  position:absolute;
+  width:100%;
+  margin-right:auto;
+}
+
+.foot-container,
+.links {
+  display:flex;
+  align-items: center;
+  justify-content:center;
+} 
+
+.foot-container{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.links {
+  font-family: "Poppins", serif;
+  font-weight: 700 !important;
+  margin-top: 10px;
+  width:auto;
+  margin-right:auto;
+}
+
+.links a {
+    color: #fff;
+    margin-inline: 25px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.links a:hover {
+  transform: scale(1.2);
+  color: #fff;
+  text-decoration: none;
+}
+
+.mlhsocialLinks{
+  display: flex;
+  justify-content: space-between;;
+}
+
+.mlhsocialLinks a{
+  color: #fff;
+  font-size:20px;
+}
+
+.mlhsocialLinks a:hover {
+  transform: translate(0, -20%);
+  transition: all 0.3s ease;
+}
