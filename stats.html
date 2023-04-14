@@ -1,0 +1,74 @@
+---
+layout: page
+title: Pod Statistics
+---
+<div class="row justify-content-between">
+  <div class="col">
+    <h2>Pod projects</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+	<thead class="thead-light">
+	  <tr>
+	    <th>Project name</th>
+	    <th>Commits</th>
+	    <th>Merged PRs</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% assign total_commits = 0 %}
+	  {% assign total_merged = 0 %}
+	  {% for project in page.projects %}
+   	     {% assign total_commits = total_commits |
+	     plus: project.repo.commits %}
+	     {% assign total_merged = total_merged |
+	     plus: project.repo.merged %}
+	  <tr>
+	    <td>
+	      <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
+		{{ project.title }}
+	      </a>
+	    </td>
+	    <td>{{ project.repo.commits }}</td>
+	    <td>{{ project.repo.merged }}</td>
+	  </tr>
+	  {% endfor %}
+	  <tr>
+	    <td><strong>Total</strong></td>
+	    <td><strong>{{ total_commits }}</strong></td>
+	    <td><strong>{{ total_merged }}</strong></td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="col">
+    <h2>Leaderboard</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+	<!-- TODO: Add JS to sort the table according to the clicked header -->
+	<thead class="thead-light">
+	  <tr>
+	    <th>#</th>
+	    <th>Name</th>
+	    <th>Commits</th>
+	    <th>Merged PRs</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% assign number = 0 %}
+	  {% assign fellows_by_commit = page.fellows | sort: "commits" | reverse %}
+	  {% for fellow in fellows_by_commit  %}
+   	     {% assign number = number | plus: 1 %}
+	  <tr>
+	    <th scope="row">{{ number }}</th>
+	    <td>{{ fellow.name }}</td>
+	    <td>{{ fellow.commits }}</td>
+	    <td>{{ fellow.merged }}</td>
+	  {% endfor %}
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+  </div>
+</div>

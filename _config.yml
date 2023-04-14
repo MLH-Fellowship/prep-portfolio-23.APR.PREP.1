@@ -13,5 +13,5 @@ sass:
 collections:
   fellows:
     output: true
-    
+
 icon: /assets/img/icon.jpg
