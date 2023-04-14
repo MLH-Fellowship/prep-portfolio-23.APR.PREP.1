@@ -1,0 +1,61 @@
+<div id="map">
+
+</div>
+
+
+
+<script>
+   
+    var fellows_information = {{ site.data.fellows | jsonify }};
+
+    const mymap = L.map('map').setView([51.505, -0.09], 2);
+
+    var tiles = L.esri.basemapLayer("Streets").addTo(mymap);
+
+    var apiKey = {{ site.data.config | jsonify }};
+    
+    // create the geocoding control and add it to the map
+    var searchControl = L.esri.Geocoding.geosearch({
+    providers: [
+        L.esri.Geocoding.arcgisOnlineProvider({
+        // API Key to be passed to the ArcGIS Online Geocoding Service
+        apikey: apiKey.API_TOKEN
+        })
+    ]
+    }).addTo(mymap);
+
+    // create an empty layer group to store the results and add it to the map
+    var results = L.layerGroup().addTo(mymap);
+
+    // for each of the fellow's location add that location to the map as a marker
+
+    
+    if (fellows_information && fellows_information.length > 0) {
+    for (var i = 0; i < fellows_information.length - 1; i++) {
+        (function (index) {
+            // converts the location string into a dictionary of lists of dictionaries that contains the latlng 
+            L.esri.Geocoding.geocode({apikey: apiKey.API_TOKEN}).text(fellows_information[i]['location']).run(function (err, response) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+
+                marker = L.marker(response['results'][0]['latlng']);
+
+                // <img src="/assets/img/${fellows_information[index]['name']}.jpg" />
+               //popup for each marker containing the fellows information in cards such as their name, location, and description.
+                marker.bindPopup(`<div class="popup-content">
+               
+                    <img src=${fellows_information[index]['img']} />
+                    <h5>${fellows_information[index]['name']}</h5>
+                    <h6>${fellows_information[index]['location']}</h6>
+                    <p>${fellows_information[index]['about']}</p></div>`, { className: 'popup-style' });
+            
+                results.addLayer(marker)
+            });
+         })(i);
+    }
+}
+
+    
+</script>
