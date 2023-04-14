@@ -2,6 +2,8 @@
   event: MLH Prep Pod Project
   date: April 2023
   page-name: portfolio
+  img : portfolio.png
+  info : A portfolio app is a digital platform that allows individuals or businesses to showcase their work or products in a visually appealing and professional manner. 
   repo:
     owner: MLH-Fellowship
     name: prep-portfolio-23.APR.PREP.1
@@ -10,6 +12,8 @@
   event: MLH Prep Pod Project
   date: April 2023
   page-name: portfolio
+  img : weather.png
+  info : A weather app is a software application designed to provide users with current and forecasted weather information for their location or any other specified location.
   repo:
     owner: MLH-Fellowship
     name: prep-project-23.APR.PREP.1
