@@ -9,7 +9,7 @@
     {% endif %}
       <div class="card">
         <div class="info">
-          <img src="/assets/img/{{ item.img }}" alt="{{item.title}}"/>
+          <img class="projectImg" src="/assets/img/{{ item.img }}" alt="{{item.title}}"/>
           <p class="title">{{ item.title }}</p>
           <p class="location">{{ item.event }}</p>
           <p class="dates">{{ item.date }}</p>
@@ -21,3 +21,17 @@
   </div>
 </div>
 
+<style>
+
+  .projectImg{
+    border-radius: 50%;
+      max-width: 400px;
+      max-height: 400px;
+      /* width: 400px;
+      height:400px; */
+      margin-left: auto;
+      margin-right: auto;
+      display: inline;
+      padding: 20px;
+  }
+</style>
