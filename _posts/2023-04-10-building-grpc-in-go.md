@@ -4,11 +4,9 @@ author: Chukwuka Ikeh
 title: Building a CRUD Microservice using gRPC in Go
 ---
 
-<p align="center">
-  <img src="../assets/img/posts/IMG_6689.jpeg" alt="Building a CRUD Microservice using gRPC in Go" width="700"/>
-</p>
-
 gRPC is a powerful tool for building distributed systems and microservices and is a great choice for developers who need a high-performance, reliable communication mechanism between their applications.
+
+![Woman in futuristic auditorium](/assets/img/posts/IMG_6689.jpeg){: style="max-width: 700px; width: 100%;display: block; margin: 0 auto;"}
 
 In this article, we'll walk you through the process of building a Microservice using gRPC in Go, starting with setting up your development environment and defining the service's API using Protocol Buffers. You'll learn how to implement the service's business logic, as well as the gRPC server and client. By the end of this article, you'll have a good understanding of how to design and build a Microservice using gRPC in Go.
 
