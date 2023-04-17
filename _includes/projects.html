@@ -9,12 +9,28 @@
     {% endif %}
       <div class="card">
         <div class="info">
+          <img class="projectImg" src="/assets/img/{{ item.img }}" alt="{{item.title}}"/>
           <p class="title">{{ item.title }}</p>
           <p class="location">{{ item.event }}</p>
           <p class="dates">{{ item.date }}</p>
+          <p class="description">{{ item.info }}</p>
         </div>
       </div>
     </a>
     {% endfor %}
   </div>
 </div>
+
+<style>
+
+  .projectImg{
+    border-radius: 50%;
+      max-width: 400px;
+      max-height: 400px;
+      /* width: 400px;
+      height:400px; */
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+</style>
