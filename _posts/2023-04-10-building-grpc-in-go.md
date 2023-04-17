@@ -2,7 +2,6 @@
 layout: post
 author: Chukwuka Ikeh
 title: Building a CRUD Microservice using gRPC in Go
-headline: Optional headline goes here
 ---
 
 <p align="center">
@@ -14,6 +13,7 @@ gRPC is a powerful tool for building distributed systems and microservices and i
 In this article, we'll walk you through the process of building a Microservice using gRPC in Go, starting with setting up your development environment and defining the service's API using Protocol Buffers. You'll learn how to implement the service's business logic, as well as the gRPC server and client. By the end of this article, you'll have a good understanding of how to design and build a Microservice using gRPC in Go.
 
 ## Introduction to Microservices and gRPC
+
 Microservices is an architectural style that structures an application as a collection of small, independent services, each running its own process and communicating with lightweight mechanisms, often an HTTP API. The goal of microservices is to enable fast delivery of large and complex applications, increase efficiency and scalability, and allow for a more agile development process.
 
 The main advantage of microservices is the ability to develop, deploy, and scale services independently, leading to faster release cycles, increased deployment efficiency, and reduced downtime. Additionally, small, cross-functional teams can develop and maintain microservices, leading to faster innovation and reduced time-to-market.
@@ -31,6 +31,7 @@ However, there are also some disadvantages to using gRPC. One is the limited bro
 Finally, it's important to note that gRPC may not be the best fit for all use cases. In situations where REST-based APIs are sufficient, it may be an over-engineering solution. Additionally, gRPC may not be well-suited for applications that require real-time updates or notifications, as the request/response nature of gRPC may not provide the necessary real-time updates.
 
 ## Setting up the development environment
+
 Setting up the development environment for a gRPC project in Go is crucial in getting started with the project. The following steps outline the process for installing the required components and setting up the development environment:
 
 Setup a module environment for the gRPC project by running the following `go mod` command in the project directory (for example, pieces-grpc):
@@ -46,17 +47,20 @@ Next in the setup is installing the Protocol Buffers compiler and gRPC plugins f
 ```sh
 brew install protobuf
 ```
+
 Check here if you’re using a different OS environment to follow along with the tutorial. Then check if the installation was successfully executed by running the below command:
 
 ```sh
 protoc --version  #libprotoc 3.21.12
 ```
+
 Next, let’s complete the setup by installing some Go plugins for the project. The easiest way to do this is to use the Go package manager, `go get`, to install the required components. The following command can be run in a terminal to install the necessary components:
 
 ```sh
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 ```
+
 After downloading the plugins, let’s define a simple CRUD service. The first step is to define the service API using the Protocol Buffers language. This is done by creating a .proto file, which defines the service and its methods. The following example shows how to define a CRUD (Create, Read, Update, Delete) service API:
 
 ```proto
@@ -98,6 +102,7 @@ message DeleteUserRequest {
 message DeleteUserResponse {
 }
 ```
+
 This Protocol Buffer message definition defines a gRPC service named `UserService` with 4 remote procedure calls (RPC): `CreateUser`, `ReadUser`, `UpdateUser`, and `DeleteUser`. Each RPC maps a request message to a response message. Each RPC's request and response messages are defined as separate message types, such as `CreateUserRequest` and `CreateUserResponse`. The messages contain fields, such as `name` and `age`, in the `CreateUserRequest`, each with a unique field number tag. The syntax specified at the beginning of the file is protobuf version 3. To learn more about the Protocol Buffer message definition, check [here](https://developers.google.com/protocol-buffers/docs/proto3).
 
 ```sh
@@ -105,6 +110,7 @@ protoc --proto_path=. --go_out=. \
   --go-grpc_out=. \
   ./api/*.proto
 ```
+
 Use protoc with the following options: `--proto_path=., --go_out=.`, `--go-grpc_out=.`, to compile the `.proto` files in the `api` directory and generate `.pb.go` files in the same directory as the package name specified using `option go_package` in the input files, preserving their sub-directory structure if any, but not creating the output directory. Check the `./gen` folder to see the generated Go code. To learn more about the generated code, check [here](https://developers.google.com/protocol-buffers/docs/reference/go-generated#package).
 
 With the development environment set up and the `.proto` file defining the service API, the next step is implementing the gRPC service and client in Go. The following outlines the process for implementing the service and client, using a simple business logic that operates CRUD on an in-memory map object type in Go.
@@ -117,7 +123,7 @@ package handler
 
 import (
   "github.com/IkehAkinyemi/grpc-service/gen"
-) 
+)
 
 type Handler struct {
   gen.UnimplementedUserServiceServer
@@ -260,6 +266,7 @@ func main() {
   client := gen.NewUserServiceClient(conn)
 }
 ```
+
 This is the main Go code for the gRPC client. The code creates a client connection to a gRPC server running on `localhost:50051` using an insecure transport channel. If the connection is successful, the conn variable holds the connection to the server. The code creates a client to the gRPC server's UserService by calling the `gen.NewUserServiceClient` function and passing it the conn variable. The client is then ready to send requests to the UserService. If there's an error while creating the connection, the code logs the error message and terminates the client. The `defer` statement closes the connection to the server when the client is done.
 
 Next, let’s setup utility functions to send requests to the server using the client to create, read, update or delete a user:
@@ -313,6 +320,7 @@ func deleteUser(ctx context.Context, client gen.UserServiceClient, id string) {
   log.Printf("Deleted User with ID: %s", id)
 }
 ```
+
 These are 4 functions that perform CRUD operations on a user in a gRPC service.
 
 - The `createUser` function takes a context and client as parameters, generates a random user, and creates it by sending a CreateUserRequest to the server. If successful, it returns the id of the created user. If not, it logs a fatal error message.
@@ -356,6 +364,7 @@ func main() {
   }
 }
 ```
+
 Now we have the client ready, use the following commands to spin the gRPC server, and make requests to it using the client like below:
 
 ```sh
@@ -372,5 +381,5 @@ go run ./cmd/client/* -d <user_id> # delete a user
 ```
 
 ## Conclusion
-In conclusion, this article has discussed the implementation of a gRPC service for user management. The server is implemented in Go and uses gRPC to handle client requests and the underlying communication between the client and server. The service is defined in a .proto file, and the generated code is used to implement the server and client. The implementation of the service provides basic CRUD operations for user management, such as creating, reading, updating, and deleting users. The gRPC client establishes a connection to the server and uses the generated client code to interact with the service. For the entire codebase, please check [here](https://github.com/IkehAkinyemi/grpc-service).
 
+In conclusion, this article has discussed the implementation of a gRPC service for user management. The server is implemented in Go and uses gRPC to handle client requests and the underlying communication between the client and server. The service is defined in a .proto file, and the generated code is used to implement the server and client. The implementation of the service provides basic CRUD operations for user management, such as creating, reading, updating, and deleting users. The gRPC client establishes a connection to the server and uses the generated client code to interact with the service. For the entire codebase, please check [here](https://github.com/IkehAkinyemi/grpc-service).
