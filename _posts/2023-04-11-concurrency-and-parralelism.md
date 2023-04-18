@@ -2,7 +2,6 @@
 layout: post
 author: Chukwuka Ikeh
 title: Brief Introduction to Concurrency and Parallelism
-headline: Optional headline goes here
 ---
 
 Concurrency, Asynchronous, Parallelism, Single-threaded, and Multithreaded programming are all concepts that are important in understanding how modern computer systems work. In this article, we will explore these concepts briefly and discuss how they relate to IO and task processing.
